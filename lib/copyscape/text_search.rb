@@ -4,8 +4,8 @@ module Copyscape
   
   class TextSearch < RequestBase
 
-    def initialize(text, encoding = 'UTF-8')
-      http_response = post_response(:o => 'csearch', :t => text, :e => encoding)
+    def initialize(text, encoding = 'UTF-8', full_comparison = 0)
+      http_response = post_response(:o => 'csearch', :t => text, :e => encoding, :c => full_comparison)
       @response = Response.new(http_response)
     end
 
